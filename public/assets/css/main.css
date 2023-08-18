@@ -43,7 +43,7 @@ a {
 }
 
 a:hover {
-  color: #00b6a1;
+  color: var(--color-secondary);
   text-decoration: none;
 }
 
@@ -68,7 +68,7 @@ section {
 }
 
 .sections-bg {
-  background-color: #f6f6f6;
+  background-color: #dfdede;
 }
 
 .section-header {
@@ -84,7 +84,7 @@ section {
   color: var(--color-secondary);
 }
 
-.section-header h2:after {
+/* .section-header h2:after {
   content: "";
   position: absolute;
   display: block;
@@ -95,7 +95,7 @@ section {
   right: 0;
   bottom: 0;
   margin: auto;
-}
+} */
 
 .section-header p {
   margin-bottom: 0;
@@ -460,6 +460,8 @@ section {
   .navbar .dropdown:hover>ul {
     opacity: 1;
     top: 100%;
+    left: -100%;
+    padding: 20px;
     visibility: visible;
   }
 
@@ -834,11 +836,10 @@ section {
 /*--------------------------------------------------------------
 # Call To Action Section
 --------------------------------------------------------------*/
-.call-to-action .container {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/cta-bg.jpg") center center;
+.call-to-action {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url("../img/join.jpg") center center;
   background-size: cover;
   padding: 100px 60px;
-  border-radius: 15px;
   overflow: hidden;
 }
 
@@ -852,72 +853,6 @@ section {
 .call-to-action p {
   color: #fff;
   margin-bottom: 20px;
-}
-
-.call-to-action .play-btn {
-  width: 94px;
-  height: 94px;
-  margin-bottom: 20px;
-  background: radial-gradient(var(--color-primary) 50%, rgba(0, 131, 116, 0.4) 52%);
-  border-radius: 50%;
-  display: inline-block;
-  position: relative;
-  overflow: hidden;
-}
-
-.call-to-action .play-btn:before {
-  content: "";
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  animation-delay: 0s;
-  animation: pulsate-btn 2s;
-  animation-direction: forwards;
-  animation-iteration-count: infinite;
-  animation-timing-function: steps;
-  opacity: 1;
-  border-radius: 50%;
-  border: 5px solid rgba(0, 131, 116, 0.7);
-  top: -15%;
-  left: -15%;
-  background: rgba(198, 16, 0, 0);
-}
-
-.call-to-action .play-btn:after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-40%) translateY(-50%);
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 15px solid #fff;
-  z-index: 100;
-  transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.call-to-action .play-btn:hover:before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-40%) translateY(-50%);
-  width: 0;
-  height: 0;
-  border: none;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 15px solid #fff;
-  z-index: 200;
-  animation: none;
-  border-radius: 0;
-}
-
-.call-to-action .play-btn:hover:after {
-  border-left: 15px solid var(--color-primary);
-  transform: scale(20);
 }
 
 .call-to-action .cta-btn {
@@ -935,7 +870,7 @@ section {
 }
 
 .call-to-action .cta-btn:hover {
-  background: var(--color-primary);
+  background: var(--color-secondary);
   border: 2px solid var(--color-primary);
 }
 
@@ -1182,7 +1117,7 @@ section {
 
 .portfolio .portfolio-flters li:hover,
 .portfolio .portfolio-flters li.filter-active {
-  color: var(--color-primary);
+  color: var(--color-secondary);
 }
 
 .portfolio .portfolio-flters li:first-child {
@@ -1201,30 +1136,38 @@ section {
 }
 
 .portfolio .portfolio-wrap {
+  padding: 25px 20px;
+  background-color: #fff;
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   height: 100%;
+  width:290px;
   overflow: hidden;
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .portfolio .portfolio-wrap img {
   transition: 0.3s;
   position: relative;
   z-index: 1;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
 }
 
 .portfolio .portfolio-wrap .portfolio-info {
-  padding: 25px 20px;
-  background-color: #fff;
+  padding: 10px 0px;
   position: relative;
-  border-top: 1px solid #f3f3f3;
   z-index: 2;
 }
 
 .portfolio .portfolio-wrap .portfolio-info h4 {
   font-size: 18px;
   font-weight: 600;
-  padding-right: 50px;
+  text-align: center;
 }
 
 .portfolio .portfolio-wrap .portfolio-info h4 a {
@@ -1239,8 +1182,8 @@ section {
 .portfolio .portfolio-wrap .portfolio-info p {
   color: #6c757d;
   font-size: 14px;
-  margin-bottom: 0;
-  padding-right: 50px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .portfolio .portfolio-wrap:hover img {
@@ -2614,7 +2557,7 @@ section {
 --------------------------------------------------------------*/
 .footer {
   font-size: 14px;
-  background-color: var(--color-primary);
+  background-color: var(--color-default);
   padding: 50px 0;
   color: white;
 }
@@ -2734,7 +2677,17 @@ section {
 .card-title a{
   font-family: var(--font-secondary);
   color: var(--color-secondary);
+  font-size: 18px;
+    font-weight: 600;
 }
 .card-title a:hover{
   color: var(--color-default)
 }
+
+.happy-memeber-img{
+  width:150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+
