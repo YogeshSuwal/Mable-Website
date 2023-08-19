@@ -17,7 +17,7 @@
           <h2>Support that gets me is my <span>kind of independence</span></h2>
           <p>Sed autem laudantium dolores. Voluptatem itaque ea consequatur eveniet. Eum quas beatae cumque eum quaerat.</p>
           <div class="d-flex justify-content-center justify-content-lg-start">
-            <a href="#" class="btn-get-started">Find Support</a>
+            <a href="/find-support" class="btn-get-started">Find Support</a>
             <a href="#" class="btn-get-started">Provide Support</a>
             
           </div>

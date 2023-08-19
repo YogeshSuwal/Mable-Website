@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('Client.index');
 });
+
+Route::view('/find-support','Client.Support.support')->name('support');
