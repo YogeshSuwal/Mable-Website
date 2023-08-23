@@ -42,10 +42,11 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-12">
+                        <span class="text-danger">@error('question_one'){{ $message }}@enderror</span>
                             <label for="inputFirst" class="form-label">Are you over 18?</label>
                             <div class="row">
                                <div class="col-md-12">
-
+                                   
                                 <div class="form-check">
                                 
                                     <input class="form-check-input" type="radio"wire:model="question_one" value="Yes">
@@ -65,6 +66,7 @@
                         </div>
 
                         <div class="col-md-12">
+                        <span class="text-danger">@error('question_two'){{ $message }}@enderror</span>
                             <label for="inputFirst" class="form-label">What type of support do you want?</label>
                             <div class="row">
                                <div class="col-md-12">
@@ -85,6 +87,7 @@
                         </div>
 
                         <div class="col-md-12">
+                        <span class="text-danger">@error('question_three'){{ $message }}@enderror</span>
                             <label for="inputFirst" class="form-label">What kind of support do you want?</label>
                             <div class="row">
                                <div class="col-md-12">
@@ -106,6 +109,7 @@
                         </div>
 
                         <div class="col-md-12">
+                        <span class="text-danger">@error('question_four'){{ $message }}@enderror</span>
                             <label for="inputFirst" class="form-label">Support Time</label>
                             <div class="row">
                                <div class="col-md-12">

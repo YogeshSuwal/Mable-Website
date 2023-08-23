@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class support extends Model
 {
     use HasFactory;
-    protected $fillab =[
+    protected $fillable =[
         'first_name',
         'last_name',
         'address',

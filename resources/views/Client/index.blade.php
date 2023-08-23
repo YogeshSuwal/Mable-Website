@@ -9,6 +9,18 @@
 
 @include('Client.Parts.navbar') 
 
+@if (Session::has('success'))
+                                    
+  <div class="alert alert-success " id="support" role="alert">
+      {{ Session::get('success') }}
+  </div>
+  @endif
+
+  <script type="text/javascript">
+              setTimeout(function() {
+                  $('#support').fadeOut('slow');
+              }, 4000);              
+          </script>
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero">
     <div class="container position-relative">

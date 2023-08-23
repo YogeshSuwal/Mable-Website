@@ -5,6 +5,8 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use App\Models\support;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SupportMail;
 class MultiStepForm extends Component
 {
 
@@ -17,7 +19,9 @@ class MultiStepForm extends Component
     public $question_two;
     public $question_three;
     public $question_four;
-    public $cv; 
+    public $cv;
+    public $text;
+
     public $totalSteps=3;
     public $currentStep=1;
 
@@ -74,7 +78,6 @@ class MultiStepForm extends Component
         }
         $cv_name = 'Cv_'.$this->cv->getClientOriginalName();
         $upload_cv = $this->cv->storeAs('support_cv',$cv_name);
-        if($upload_cv){
             $values = array(
                 "first_name"=>$this->first_name,
                 "last_name"=>$this->last_name,
@@ -84,10 +87,15 @@ class MultiStepForm extends Component
                 "question_two"=>$this->question_two,
                 "question_three"=>$this->question_three,
                 "question_four"=>$this->question_four,
+                "cv"=>$upload_cv,
             );
+
+            // Mail::send(new SupportMail($this->first_name));
             support::insert($values);
-            $this->reset();
-            $this->currentStep = 1;
-        }
+            
+            // $this->reset();
+            // $this->currentStep = 1;
+            return redirect('/')->with('success',"Thank you for your submission,Our team will reach you soon.");
+    
     }
 }
